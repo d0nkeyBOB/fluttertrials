@@ -31,27 +31,51 @@ class FirstScreen extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: <Widget>[
-
-          Row(
+          Padding(
+            padding:EdgeInsets.all(15.0),
+            child: Row(
             children: <Widget>[
               Expanded(
-                child: Image.asset('lib/images/logo.png', height: 50.0,),
+                child: Image.asset('lib/images/logo.png', height: 75.0,),
               ),
               Expanded(
-                child: Image.asset('lib/images/logo.png'),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding:EdgeInsets.all(10.0),
+                      child: Center(
+                        child: Text('Pick Item', style: TextStyle(fontSize: 20.0, color: Colors.blue),),
+                      ),
+                    ),
+                    Container(
+                      height: 50.00,
+                      width: 125.0,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 1.0
+                        )
+                      ),
+                      child: Text('Nearby'),
+                    )
+                  ],
+                )
               ),
               Expanded(
-                child: Image.asset('lib/images/logo.png'),
+                child: Icon(
+                  Icons.account_circle, size: 75.0,
+                ),
               ),                
             ],
           ),
-          Flexible(
-            flex: 1,
-            child:Container(
-              color: Colors.white,
-              child: Text('Content'),
-            )
-          ),
+      ),
+          Expanded(
+              child: Container(
+                color: Colors.white,
+                child: Text('Content'),
+                constraints: BoxConstraints.expand(),
+              ),
+            ),
           FlatButton(
               color: Colors.green,
               child:SizedBox(
